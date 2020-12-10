@@ -1,8 +1,6 @@
 const input = require("./input.js")
-const log = (m) => (v) => {
-  console.log(m, v)
-  return v
-}
+const { log } = require("../index")
+
 const getMin = (str) => str.split("-")[0]
 const getMax = (str) => str.split("-")[1]
 const getChar = (str) => str.split(":")[0]
@@ -20,8 +18,8 @@ const forCorrectCharCount = ([minMax, _char, string]) => {
 }
 
 // part 1
-// let result = input.map(forCorrectCharCount).filter((b) => b == true)
-//   .length
+let part1 = input.map(forCorrectCharCount).filter((b) => b == true).length
+log("day2 part1")(part1)
 
 //part 2
 const hasCharInACorrectPlace = ([minMax, _char, string]) => {
@@ -35,4 +33,5 @@ const hasCharInACorrectPlace = ([minMax, _char, string]) => {
   )
 }
 
-let result = input.map(hasCharInACorrectPlace).filter((b) => b == true).length
+let part2 = input.map(hasCharInACorrectPlace).filter((b) => b == true).length
+log("day2 part2")(part2)
